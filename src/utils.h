@@ -237,7 +237,7 @@ unsigned int get_unix_datetime(char *s, time_t *datetime)
 /* Returns the difference of time between the two in milliseconds */
 unsigned long get_elapsed_ms(struct timeval *start, struct timeval *end)
 {
-	return (((end->tv_sec - start->tv_sec) * 1000000 + (end->tv_usec - start->tv_usec)) / 1000);
+	return ((end->tv_sec - start->tv_sec) * 1000) + ((end->tv_usec - start->tv_usec) / 1000);
 }
 
 /* Converts an unsigned integer to a char array without termination */
